@@ -1,0 +1,45 @@
+﻿<Window x:Class="ImagesRecovery3.View.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImagesRecovery3.View"
+        mc:Ignorable="d"
+  Title="Настройка парамтров" Height="315" Width="500">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.7*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label 
+                Content="{Binding TitleName}"
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="2" 
+                FontSize="16" />
+            <StackPanel
+                Grid.Row="1">
+                <Label
+                    Content="Выберете:"/>
+                <Button Margin="5 5" Command="{Binding ArealButtonCommand}">
+                    <TextBlock TextWrapping="Wrap" FontSize="12">Повредить область</TextBlock>
+                </Button>
+                <Button Margin="5 5" Command="{Binding RamdomButtonCommand}">
+                    <TextBlock TextWrapping="Wrap" FontSize="12">Повредить случайные пиксели</TextBlock>
+                </Button>
+            </StackPanel>
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                Content="{Binding CurrentPage}"
+                NavigationUIVisibility="Hidden"
+                Opacity="{Binding FrameOpacity}"/>
+        </Grid>
+    </Grid>
+</Window>
